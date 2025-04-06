@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:coffee_504/screens/signup_screen.dart';
 import 'package:coffee_504/screens/signin_screen.dart';
+import 'package:coffee_504/screens/pantalla_aboutus.dart';
 
 class Bienvenida extends StatefulWidget {
   const Bienvenida({Key? key}) : super(key: key);
@@ -48,7 +49,7 @@ class _bienvenida extends State<Bienvenida> {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => SignUpScreen()),
+                  MaterialPageRoute(builder: (context) => AboutUsPage()),
                 );
               },
               style: ElevatedButton.styleFrom(

@@ -4,6 +4,7 @@ import 'package:coffee_504/screens/signup_screen.dart';
 import 'package:coffee_504/utils/color_utils.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:coffee_504/screens/welcome_screen.dart';
 
 class SignInScreen extends StatefulWidget {
   const SignInScreen({Key? key}) : super(key: key);
