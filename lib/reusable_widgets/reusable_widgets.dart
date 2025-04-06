@@ -15,15 +15,19 @@ TextField reusableTextField(
     obscureText: isPasswordType,
     enableSuggestions: !isPasswordType,
     autocorrect: !isPasswordType,
-    cursorColor: Colors.white,
-    style: TextStyle(color: Colors.white.withOpacity(0.9)),
+    cursorColor: const Color.fromARGB(96, 39, 19, 0),
+    style: TextStyle(
+      color: const Color.fromARGB(96, 39, 19, 0).withOpacity(0.9),
+    ),
     decoration: InputDecoration(
-      prefixIcon: Icon(icon, color: Colors.white70),
+      prefixIcon: Icon(icon, color: const Color.fromARGB(185, 39, 19, 4)),
       labelText: text,
-      labelStyle: TextStyle(color: Colors.white.withOpacity(0.9)),
+      labelStyle: TextStyle(
+        color: const Color.fromARGB(96, 39, 19, 1).withOpacity(0.9),
+      ),
       filled: true,
       floatingLabelBehavior: FloatingLabelBehavior.never,
-      fillColor: Colors.white.withOpacity(0.3),
+      fillColor: const Color.fromARGB(255, 255, 255, 255).withOpacity(0.3),
       border: OutlineInputBorder(
         borderRadius: BorderRadius.circular(30.0),
         borderSide: const BorderSide(width: 0, style: BorderStyle.none),
@@ -53,7 +57,7 @@ Container signInSignUpButton(
       child: Text(
         isLogin ? 'LOG IN' : 'SING UP',
         style: const TextStyle(
-          color: Colors.black87,
+          color: Colors.white,
           fontWeight: FontWeight.bold,
           fontSize: 16,
         ),
@@ -61,9 +65,9 @@ Container signInSignUpButton(
       style: ButtonStyle(
         backgroundColor: MaterialStateProperty.resolveWith((states) {
           if (states.contains(MaterialState.pressed)) {
-            return Colors.black26;
+            return const Color.fromARGB(181, 255, 211, 150);
           }
-          return Colors.white;
+          return const Color.fromARGB(255, 96, 39, 29);
         }),
         shape: MaterialStateProperty.all<RoundedRectangleBorder>(
           RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),

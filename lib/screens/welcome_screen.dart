@@ -44,7 +44,7 @@ class _bienvenida extends State<Bienvenida> {
             Padding(padding: EdgeInsets.all(5.0)),
 
             ElevatedButton(
-              child: Text("Unete", style: TextStyle(color: Colors.white)),
+              child: Text("Acerca de", style: TextStyle(color: Colors.white)),
               onPressed: () {
                 Navigator.push(
                   context,

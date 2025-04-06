@@ -19,6 +19,15 @@ class _SignInScreenState extends State<SignInScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBodyBehindAppBar: true,
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        title: const Text(
+          "Home",
+          style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+        ),
+      ),
       body: Container(
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
@@ -94,7 +103,7 @@ class _SignInScreenState extends State<SignInScreen> {
       children: [
         const Text(
           "No tienes una Cuenta?",
-          style: TextStyle(color: Colors.white70),
+          style: TextStyle(color: Color.fromARGB(255, 88, 53, 47)),
         ),
         GestureDetector(
           onTap: () {
@@ -105,7 +114,10 @@ class _SignInScreenState extends State<SignInScreen> {
           },
           child: const Text(
             " Sign Up",
-            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+            style: TextStyle(
+              color: Color.fromARGB(255, 73, 26, 17),
+              fontWeight: FontWeight.bold,
+            ),
           ),
         ),
       ],

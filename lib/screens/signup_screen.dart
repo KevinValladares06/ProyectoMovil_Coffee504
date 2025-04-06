@@ -36,7 +36,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
             colors: [
               hexStringToColor("ecd0c3"), // Marrón café suave
               hexStringToColor("e1b99f"), // Beige cremoso
-              //hexStringToColor("60271d"), // Caramelo tostado
             ],
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
@@ -44,9 +43,24 @@ class _SignUpScreenState extends State<SignUpScreen> {
         ),
         child: SingleChildScrollView(
           child: Padding(
-            padding: EdgeInsets.fromLTRB(20, 120, 20, 0),
+            padding: const EdgeInsets.fromLTRB(20, 120, 20, 0),
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
+                const Text(
+                  "Registro",
+                  style: TextStyle(
+                    fontSize: 32,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.brown,
+                  ),
+                ),
+                const SizedBox(height: 8),
+                const Text(
+                  "Por favor, complete todos los campos para crear su cuenta.",
+                  style: TextStyle(fontSize: 16, color: Colors.black87),
+                ),
+                const SizedBox(height: 30),
                 reusableTextField(
                   "Ingrese su Usuario",
                   Icons.person_outline,
@@ -60,29 +74,42 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   false,
                   _emailTextController,
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 reusableTextField(
                   "Ingrese su Contraseña",
                   Icons.lock_outline,
                   true,
                   _passwordTextController,
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 signInSignUpButton(context, false, () {
+                  if (_userNameTextController.text.isEmpty ||
+                      _emailTextController.text.isEmpty ||
+                      _passwordTextController.text.isEmpty) {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      const SnackBar(
+                        content: Text('Todos los campos son obligatorios'),
+                      ),
+                    );
+                    return;
+                  }
+
                   FirebaseAuth.instance
                       .createUserWithEmailAndPassword(
                         email: _emailTextController.text,
                         password: _passwordTextController.text,
                       )
                       .then((value) {
-                        print("Feliciades Cuenta Creada");
+                        print("Felicidades, cuenta creada");
                         Navigator.push(
                           context,
                           MaterialPageRoute(builder: (context) => HomeScreen()),
                         );
                       })
                       .onError((error, stackTrace) {
-                        print("Error ${error.toString()}");
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(content: Text("Error: ${error.toString()}")),
+                        );
                       });
                 }),
               ],
