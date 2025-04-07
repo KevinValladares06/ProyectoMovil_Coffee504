@@ -16,7 +16,10 @@ class AppTextStyles {
     fontFamily: 'Georgia',
   );
 
-  static const slogan = TextStyle(fontSize: 14, color: AppColors.white70);
+  static const slogan = TextStyle(
+    fontSize: 14,
+    color: Color.fromARGB(255, 96, 39, 29),
+  );
 
   static const sectionTitle = TextStyle(
     fontSize: 18,

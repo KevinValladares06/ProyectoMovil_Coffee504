@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:coffee_504/Styles/app_styles.dart';
 import 'package:coffee_504/widgets/section_card.dart';
-import 'package:coffee_504/screens/home_screen.dart';
+//import 'package:coffee_504/screens/home_screen.dart';
+import 'package:coffee_504/screens/menuproyecto.dart';
 
 class AboutUsPage extends StatefulWidget {
   const AboutUsPage({Key? key}) : super(key: key);
@@ -22,9 +23,9 @@ class _AboutUsPageState extends State<AboutUsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.background,
+      backgroundColor: const Color.fromARGB(255, 225, 185, 159),
       appBar: AppBar(
-        backgroundColor: AppColors.primaryBrown,
+        backgroundColor: const Color.fromARGB(255, 225, 185, 159),
         leading: IconButton(
           icon: const Icon(Icons.arrow_back),
           onPressed: () => Navigator.pop(context),
@@ -36,7 +37,7 @@ class _AboutUsPageState extends State<AboutUsPage> {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const HomeScreen()),
+                MaterialPageRoute(builder: (context) => const menuproyecto()),
               );
             },
           ),
@@ -45,33 +46,32 @@ class _AboutUsPageState extends State<AboutUsPage> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            // Header decorativo
+            // Imagen del logo
+            const SizedBox(height: 24),
+            Image.asset('assets/images/logocoffe.png', height: 150),
+
+            // Texto debajo de la imagen
             Container(
               width: double.infinity,
               padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 16),
               decoration: const BoxDecoration(
                 gradient: LinearGradient(
-                  colors: [AppColors.primaryBrown, AppColors.secondaryBrown],
+                  colors: [
+                    Color.fromARGB(255, 225, 185, 159),
+                    Color.fromARGB(255, 225, 185, 159),
+                  ],
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
                 ),
               ),
-              child: Column(
-                children: const [
-                  Text('Coffee 504', style: AppTextStyles.header),
-                  SizedBox(height: 6),
-                  Text(
-                    '¡Dulces momentos, auténtico sabor!',
-                    style: AppTextStyles.slogan,
-                    textAlign: TextAlign.center,
-                  ),
-                ],
+              child: Text(
+                '¡Dulces momentos, auténtico sabor!',
+                style: AppTextStyles.slogan.copyWith(
+                  color: const Color.fromARGB(255, 88, 53, 47),
+                ),
+                textAlign: TextAlign.center,
               ),
             ),
-
-            const SizedBox(height: 16),
-            Image.asset('assets/images/logocoffe.png', height: 100),
-            const SizedBox(height: 8),
 
             // SOBRE NOSOTROS
             SectionCard(

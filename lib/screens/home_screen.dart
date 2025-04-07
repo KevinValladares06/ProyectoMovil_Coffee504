@@ -1,7 +1,7 @@
 //importando la libreria material
 import 'package:coffee_504/screens/signin_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
+//import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {

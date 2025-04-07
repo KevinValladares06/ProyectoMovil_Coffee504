@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:coffee_504/screens/signup_screen.dart';
+//import 'package:coffee_504/screens/signup_screen.dart';
 import 'package:coffee_504/screens/signin_screen.dart';
 import 'package:coffee_504/screens/pantalla_aboutus.dart';
 
@@ -56,10 +56,6 @@ class _bienvenida extends State<Bienvenida> {
                 backgroundColor: Color.fromARGB(255, 96, 39, 29),
                 textStyle: const TextStyle(fontWeight: FontWeight.bold),
               ),
-            ),
-            Text(
-              "Aun no tienes una cuenta?",
-              style: TextStyle(color: Colors.black),
             ),
           ],
         ),

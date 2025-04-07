@@ -1,10 +1,11 @@
-import 'package:coffee_504/screens/home_screen.dart';
+//import 'package:coffee_504/screens/home_screen.dart';
 import 'package:coffee_504/reusable_widgets/reusable_widgets.dart';
 import 'package:coffee_504/screens/signup_screen.dart';
 import 'package:coffee_504/utils/color_utils.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:coffee_504/screens/welcome_screen.dart';
+//import 'package:coffee_504/screens/welcome_screen.dart';
+import 'package:coffee_504/screens/menuproyecto.dart';
 
 class SignInScreen extends StatefulWidget {
   const SignInScreen({Key? key}) : super(key: key);
@@ -78,11 +79,15 @@ class _SignInScreenState extends State<SignInScreen> {
                       .then((value) {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => HomeScreen()),
+                          MaterialPageRoute(
+                            builder: (context) => menuproyecto(),
+                          ),
                         );
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => HomeScreen()),
+                          MaterialPageRoute(
+                            builder: (context) => menuproyecto(),
+                          ),
                         );
                       })
                       .onError((error, StackTrace) {

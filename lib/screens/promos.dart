@@ -1,15 +1,10 @@
-import 'package:flutter/material.dart';
-import 'package:coffee_504/Styles/app_styles.dart';
 import 'package:coffee_504/screens/home_screen.dart';
+import 'package:flutter/material.dart';
+import '../styles/app_styles.dart';
 
-class PromocionesPage extends StatefulWidget {
-  const PromocionesPage({Key? key}) : super(key: key);
+class PromocionesPage extends StatelessWidget {
+  const PromocionesPage({super.key});
 
-  @override
-  _PromocionesPageState createState() => _PromocionesPageState();
-}
-
-class _PromocionesPageState extends State<PromocionesPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,7 +37,7 @@ class _PromocionesPageState extends State<PromocionesPage> {
             ClipRRect(
               borderRadius: BorderRadius.circular(10),
               child: Image.asset(
-                'assets/images/banner.png',
+                'lib/assets/banner.png',
                 height: 180,
                 width: double.infinity,
                 fit: BoxFit.cover,
@@ -65,10 +60,10 @@ class _PromocionesPageState extends State<PromocionesPage> {
               mainAxisSpacing: 10,
               physics: const NeverScrollableScrollPhysics(),
               children: [
-                Image.asset('assets/images/promo1.png', fit: BoxFit.cover),
-                Image.asset('assets/images/promo2.png', fit: BoxFit.cover),
-                Image.asset('assets/images/promo3.png', fit: BoxFit.cover),
-                Image.asset('assets/images/promo4.png', fit: BoxFit.cover),
+                Image.asset('lib/assets/promo1.png', fit: BoxFit.cover),
+                Image.asset('lib/assets/promo2.png', fit: BoxFit.cover),
+                Image.asset('lib/assets/promo3.png', fit: BoxFit.cover),
+                Image.asset('lib/assets/promo4.png', fit: BoxFit.cover),
               ],
             ),
 
