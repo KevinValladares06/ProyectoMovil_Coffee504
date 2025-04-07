@@ -1,16 +1,26 @@
-import 'package:coffee_504/screens/home_screen.dart';
+//import 'package:coffee_504/screens/home_screen.dart';
+import 'package:coffee_504/screens/BebidasCalientes.dart';
+import 'package:coffee_504/screens/menuproyecto.dart';
+import 'package:coffee_504/screens/pantalla_carrito.dart';
+import 'package:coffee_504/screens/welcome_screen.dart';
+import 'package:coffee_504/widgets/navigation.dart';
 import 'package:flutter/material.dart';
-import '../styles/app_styles.dart';
+import 'package:coffee_504/Styles/app_styles.dart';
 
-class PromocionesPage extends StatelessWidget {
-  const PromocionesPage({super.key});
+class PromocionesPage extends StatefulWidget {
+  const PromocionesPage({Key? key}) : super(key: key);
 
+  @override
+  _promocionespageState createState() => _promocionespageState();
+}
+
+class _promocionespageState extends State<PromocionesPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.background,
+      backgroundColor: const Color.fromARGB(255, 225, 185, 159),
       appBar: AppBar(
-        backgroundColor: AppColors.primaryBrown,
+        backgroundColor: const Color.fromARGB(255, 225, 185, 159),
         leading: IconButton(
           icon: const Icon(Icons.arrow_back),
           onPressed: () => Navigator.pop(context),
@@ -18,11 +28,11 @@ class PromocionesPage extends StatelessWidget {
         title: const Text('Promociones'),
         actions: [
           IconButton(
-            icon: const Icon(Icons.shopping_cart),
+            icon: const Icon(Icons.home),
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const HomeScreen()),
+                MaterialPageRoute(builder: (context) => const menuproyecto()),
               );
             },
           ),
@@ -33,11 +43,10 @@ class PromocionesPage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Banner
             ClipRRect(
               borderRadius: BorderRadius.circular(10),
               child: Image.asset(
-                'lib/assets/banner.png',
+                'assets/images/banner.png',
                 height: 180,
                 width: double.infinity,
                 fit: BoxFit.cover,
@@ -45,14 +54,12 @@ class PromocionesPage extends StatelessWidget {
             ),
             const SizedBox(height: 16),
 
-            // Título sección
             const Text(
               'Ofertas Especiales del Mes',
               style: AppTextStyles.sectionTitle,
             ),
             const SizedBox(height: 12),
 
-            // Promociones
             GridView.count(
               crossAxisCount: 2,
               shrinkWrap: true,
@@ -60,16 +67,14 @@ class PromocionesPage extends StatelessWidget {
               mainAxisSpacing: 10,
               physics: const NeverScrollableScrollPhysics(),
               children: [
-                Image.asset('lib/assets/promo1.png', fit: BoxFit.cover),
-                Image.asset('lib/assets/promo2.png', fit: BoxFit.cover),
-                Image.asset('lib/assets/promo3.png', fit: BoxFit.cover),
-                Image.asset('lib/assets/promo4.png', fit: BoxFit.cover),
+                Image.asset('assets/images/promo1.png', fit: BoxFit.cover),
+                Image.asset('assets/images/promo2.png', fit: BoxFit.cover),
+                Image.asset('assets/images/promo3.png', fit: BoxFit.cover),
+                Image.asset('assets/images/promo4.png', fit: BoxFit.cover),
               ],
             ),
 
             const SizedBox(height: 24),
-
-            // Aviso legal
             Container(
               width: double.infinity,
               padding: const EdgeInsets.all(12),
@@ -77,7 +82,7 @@ class PromocionesPage extends StatelessWidget {
                 color: AppColors.secondaryBrown.withOpacity(0.2),
                 borderRadius: BorderRadius.circular(8),
                 border: Border.all(
-                  color: AppColors.primaryBrown.withOpacity(0.5),
+                  color: const Color.fromARGB(255, 96, 39, 29).withOpacity(0.5),
                 ),
               ),
               child: const Text(
@@ -85,13 +90,41 @@ class PromocionesPage extends StatelessWidget {
                 style: TextStyle(
                   fontSize: 13,
                   fontStyle: FontStyle.italic,
-                  color: AppColors.primaryBrown,
+                  color: Color.fromARGB(255, 96, 39, 29),
                 ),
                 textAlign: TextAlign.center,
               ),
             ),
           ],
         ),
+      ),
+
+      bottomNavigationBar: CustomBottomNav(
+        currentIndex: 3, // Esta es la pestaña de Bebidas Calientes
+        onTap: (index) {
+          switch (index) {
+            case 0:
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(builder: (_) => menuproyecto()),
+              );
+              break;
+            case 1:
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(builder: (_) => BebidasCalientes()),
+              );
+              break;
+            case 2:
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(builder: (_) => PantallaCarrito()),
+              );
+              break;
+            case 3:
+              break;
+          }
+        },
       ),
     );
   }

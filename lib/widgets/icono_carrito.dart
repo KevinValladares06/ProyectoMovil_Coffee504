@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:coffee_504/carrito.dart';
+import 'package:coffee_504/screens/carrito.dart';
 
 class IconoCarrito extends StatefulWidget {
   final VoidCallback onPressed;

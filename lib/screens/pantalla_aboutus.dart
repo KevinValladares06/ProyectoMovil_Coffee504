@@ -1,9 +1,10 @@
+import 'package:coffee_504/screens/welcome_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:coffee_504/Styles/app_styles.dart';
 import 'package:coffee_504/widgets/section_card.dart';
 //import 'package:coffee_504/screens/home_screen.dart';
-import 'package:coffee_504/screens/menuproyecto.dart';
+//import 'package:coffee_504/screens/menuproyecto.dart';
 
 class AboutUsPage extends StatefulWidget {
   const AboutUsPage({Key? key}) : super(key: key);
@@ -33,11 +34,11 @@ class _AboutUsPageState extends State<AboutUsPage> {
         title: const Text('Sobre Nosotros'),
         actions: [
           IconButton(
-            icon: const Icon(Icons.shopping_cart),
+            icon: const Icon(Icons.home),
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const menuproyecto()),
+                MaterialPageRoute(builder: (context) => const Bienvenida()),
               );
             },
           ),

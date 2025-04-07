@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:coffee_504/carrito.dart';
+import 'package:coffee_504/screens/carrito.dart';
 import 'package:coffee_504/widgets/icono_carrito.dart';
-import 'package:coffee_504/pantalla_carrito.dart';
+import 'package:coffee_504/screens/pantalla_carrito.dart';
 
 class BebidasFrias extends StatefulWidget {
   const BebidasFrias({Key? key}) : super(key: key);

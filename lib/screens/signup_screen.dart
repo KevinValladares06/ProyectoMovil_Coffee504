@@ -1,5 +1,6 @@
 import 'package:coffee_504/reusable_widgets/reusable_widgets.dart';
-import 'package:coffee_504/screens/home_screen.dart';
+import 'package:coffee_504/screens/menuproyecto.dart';
+//import 'package:coffee_504/screens/home_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:coffee_504/utils/color_utils.dart';
@@ -103,7 +104,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         print("Felicidades, cuenta creada");
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => HomeScreen()),
+                          MaterialPageRoute(
+                            builder: (context) => menuproyecto(),
+                          ),
                         );
                       })
                       .onError((error, stackTrace) {

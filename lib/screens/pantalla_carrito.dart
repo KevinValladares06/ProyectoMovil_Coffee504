@@ -1,5 +1,9 @@
+import 'package:coffee_504/screens/BebidasCalientes.dart';
+import 'package:coffee_504/screens/menuproyecto.dart';
+import 'package:coffee_504/screens/promos.dart';
+import 'package:coffee_504/widgets/navigation.dart';
 import 'package:flutter/material.dart';
-import 'package:coffee_504/carrito.dart';
+import 'package:coffee_504/screens/carrito.dart';
 
 class PantallaCarrito extends StatefulWidget {
   const PantallaCarrito({Key? key}) : super(key: key);
@@ -338,6 +342,34 @@ class _PantallaCarritoState extends State<PantallaCarrito> {
                     ),
                   ],
                 ),
+      ),
+
+      bottomNavigationBar: CustomBottomNav(
+        currentIndex: 2,
+        onTap: (index) {
+          switch (index) {
+            case 0:
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(builder: (_) => menuproyecto()),
+              );
+              break;
+            case 1:
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(builder: (_) => BebidasCalientes()),
+              );
+              break;
+            case 2:
+              break;
+            case 3:
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(builder: (_) => PromocionesPage()),
+              );
+              break;
+          }
+        },
       ),
     );
   }

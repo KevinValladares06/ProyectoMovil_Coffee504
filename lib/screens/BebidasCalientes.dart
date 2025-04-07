@@ -1,7 +1,10 @@
+import 'package:coffee_504/screens/menuproyecto.dart';
+import 'package:coffee_504/screens/promos.dart';
+import 'package:coffee_504/widgets/navigation.dart';
 import 'package:flutter/material.dart';
-import 'package:coffee_504/carrito.dart';
+import 'package:coffee_504/screens/carrito.dart';
 import 'package:coffee_504/widgets/icono_carrito.dart';
-import 'package:coffee_504/pantalla_carrito.dart';
+import 'package:coffee_504/screens/pantalla_carrito.dart';
 
 class BebidasCalientes extends StatefulWidget {
   const BebidasCalientes({Key? key}) : super(key: key);
@@ -126,6 +129,34 @@ class _BebidasCalientesState extends State<BebidasCalientes> {
             ),
           ),
         ],
+      ),
+      bottomNavigationBar: CustomBottomNav(
+        currentIndex: 1, // Esta es la pestaña de Bebidas Calientes
+        onTap: (index) {
+          switch (index) {
+            case 0:
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(builder: (_) => menuproyecto()),
+              );
+              break;
+            case 1:
+              // Ya estás en esta pantalla, no hace nada
+              break;
+            case 2:
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(builder: (_) => PantallaCarrito()),
+              );
+              break;
+            case 3:
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(builder: (_) => PromocionesPage()),
+              );
+              break;
+          }
+        },
       ),
     );
   }
