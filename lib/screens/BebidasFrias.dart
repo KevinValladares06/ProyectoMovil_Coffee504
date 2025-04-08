@@ -1,4 +1,6 @@
 import 'package:coffee_504/screens/menuproyecto.dart';
+import 'package:coffee_504/screens/promos.dart';
+import 'package:coffee_504/widgets/navigation.dart';
 import 'package:flutter/material.dart';
 import 'package:coffee_504/screens/carrito.dart';
 import 'package:coffee_504/widgets/icono_carrito.dart';
@@ -131,6 +133,33 @@ class _BebidasFriasState extends State<BebidasFrias> {
             ),
           ),
         ],
+      ),
+      bottomNavigationBar: CustomBottomNav(
+        currentIndex: 1,
+        onTap: (index) {
+          switch (index) {
+            case 0:
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(builder: (_) => menuproyecto()),
+              );
+              break;
+            case 1:
+              break;
+            case 2:
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(builder: (_) => PantallaCarrito()),
+              );
+              break;
+            case 3:
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(builder: (_) => PromocionesPage()),
+              );
+              break;
+          }
+        },
       ),
     );
   }
