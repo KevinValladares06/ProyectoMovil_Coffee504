@@ -1,10 +1,9 @@
-//import 'package:coffee_504/screens/home_screen.dart';
 import 'package:coffee_504/reusable_widgets/reusable_widgets.dart';
 import 'package:coffee_504/screens/signup_screen.dart';
+import 'package:coffee_504/screens/welcome_screen.dart';
 import 'package:coffee_504/utils/color_utils.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-//import 'package:coffee_504/screens/welcome_screen.dart';
 import 'package:coffee_504/screens/menuproyecto.dart';
 
 class SignInScreen extends StatefulWidget {
@@ -29,17 +28,22 @@ class _SignInScreenState extends State<SignInScreen> {
           "Home",
           style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
         ),
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(builder: (context) => Bienvenida()),
+            );
+          },
+        ),
       ),
       body: Container(
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: [
-              hexStringToColor("ecd0c3"), // Marrón café suave
-              hexStringToColor("e1b99f"), // Beige cremoso
-              //hexStringToColor("60271d"), // Caramelo tostado
-            ],
+            colors: [hexStringToColor("ecd0c3"), hexStringToColor("e1b99f")],
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
           ),
@@ -77,12 +81,6 @@ class _SignInScreenState extends State<SignInScreen> {
                         password: _passwordTextController.text,
                       )
                       .then((value) {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => menuproyecto(),
-                          ),
-                        );
                         Navigator.push(
                           context,
                           MaterialPageRoute(

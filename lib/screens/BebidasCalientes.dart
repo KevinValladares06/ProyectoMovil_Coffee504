@@ -87,6 +87,15 @@ class _BebidasCalientesState extends State<BebidasCalientes> {
       appBar: AppBar(
         title: const Text('Bebidas Calientes'),
         backgroundColor: const Color.fromARGB(255, 225, 185, 159),
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(builder: (_) => menuproyecto()),
+            );
+          },
+        ),
         actions: [
           IconoCarrito(
             onPressed: () async {
@@ -96,7 +105,7 @@ class _BebidasCalientesState extends State<BebidasCalientes> {
                   builder: (context) => const PantallaCarrito(),
                 ),
               );
-              setState(() {}); // actualizar contador al regresar
+              setState(() {});
             },
           ),
         ],
@@ -131,7 +140,7 @@ class _BebidasCalientesState extends State<BebidasCalientes> {
         ],
       ),
       bottomNavigationBar: CustomBottomNav(
-        currentIndex: 1, // Esta es la pestaña de Bebidas Calientes
+        currentIndex: 1,
         onTap: (index) {
           switch (index) {
             case 0:
@@ -141,7 +150,6 @@ class _BebidasCalientesState extends State<BebidasCalientes> {
               );
               break;
             case 1:
-              // Ya estás en esta pantalla, no hace nada
               break;
             case 2:
               Navigator.pushReplacement(
@@ -229,7 +237,7 @@ class _BebidasCalientesState extends State<BebidasCalientes> {
                       ),
                     );
 
-                    setState(() {}); // actualizar contador después de agregar
+                    setState(() {});
                   },
                 ),
                 Expanded(

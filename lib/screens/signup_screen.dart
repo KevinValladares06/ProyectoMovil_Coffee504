@@ -1,6 +1,6 @@
 import 'package:coffee_504/reusable_widgets/reusable_widgets.dart';
 import 'package:coffee_504/screens/menuproyecto.dart';
-//import 'package:coffee_504/screens/home_screen.dart';
+import 'package:coffee_504/screens/signin_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:coffee_504/utils/color_utils.dart';
@@ -28,16 +28,22 @@ class _SignUpScreenState extends State<SignUpScreen> {
           "Sign Up",
           style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
         ),
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(builder: (context) => SignInScreen()),
+            );
+          },
+        ),
       ),
       body: Container(
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: [
-              hexStringToColor("ecd0c3"), // Marrón café suave
-              hexStringToColor("e1b99f"), // Beige cremoso
-            ],
+            colors: [hexStringToColor("ecd0c3"), hexStringToColor("e1b99f")],
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
           ),

@@ -1,6 +1,4 @@
-//import 'package:coffee_504/screens/promos.dart';
 import 'package:flutter/material.dart';
-//import 'package:coffee_504/screens/signup_screen.dart';
 import 'package:coffee_504/screens/signin_screen.dart';
 import 'package:coffee_504/screens/pantalla_aboutus.dart';
 

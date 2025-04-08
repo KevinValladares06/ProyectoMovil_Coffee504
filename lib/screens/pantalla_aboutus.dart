@@ -3,8 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:coffee_504/Styles/app_styles.dart';
 import 'package:coffee_504/widgets/section_card.dart';
-//import 'package:coffee_504/screens/home_screen.dart';
-//import 'package:coffee_504/screens/menuproyecto.dart';
 
 class AboutUsPage extends StatefulWidget {
   const AboutUsPage({Key? key}) : super(key: key);
@@ -47,11 +45,9 @@ class _AboutUsPageState extends State<AboutUsPage> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            // Imagen del logo
             const SizedBox(height: 24),
             Image.asset('assets/images/logocoffe.png', height: 150),
 
-            // Texto debajo de la imagen
             Container(
               width: double.infinity,
               padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 16),
@@ -74,7 +70,6 @@ class _AboutUsPageState extends State<AboutUsPage> {
               ),
             ),
 
-            // SOBRE NOSOTROS
             SectionCard(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -91,7 +86,6 @@ class _AboutUsPageState extends State<AboutUsPage> {
               ),
             ),
 
-            // HORARIOS
             SectionCard(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -120,7 +114,6 @@ class _AboutUsPageState extends State<AboutUsPage> {
               ),
             ),
 
-            // CONTACTO
             SectionCard(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -157,7 +150,6 @@ class _AboutUsPageState extends State<AboutUsPage> {
               ),
             ),
 
-            // REDES SOCIALES
             SectionCard(
               child: Column(
                 children: [

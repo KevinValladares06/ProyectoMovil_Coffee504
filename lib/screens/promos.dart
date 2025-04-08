@@ -1,8 +1,6 @@
-//import 'package:coffee_504/screens/home_screen.dart';
 import 'package:coffee_504/screens/BebidasCalientes.dart';
 import 'package:coffee_504/screens/menuproyecto.dart';
 import 'package:coffee_504/screens/pantalla_carrito.dart';
-import 'package:coffee_504/screens/welcome_screen.dart';
 import 'package:coffee_504/widgets/navigation.dart';
 import 'package:flutter/material.dart';
 import 'package:coffee_504/Styles/app_styles.dart';
@@ -23,16 +21,23 @@ class _promocionespageState extends State<PromocionesPage> {
         backgroundColor: const Color.fromARGB(255, 225, 185, 159),
         leading: IconButton(
           icon: const Icon(Icons.arrow_back),
-          onPressed: () => Navigator.pop(context),
+          onPressed: () {
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(builder: (context) => menuproyecto()),
+            );
+          },
         ),
         title: const Text('Promociones'),
         actions: [
           IconButton(
-            icon: const Icon(Icons.home),
+            icon: const Icon(Icons.shopping_cart),
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const menuproyecto()),
+                MaterialPageRoute(
+                  builder: (context) => const PantallaCarrito(),
+                ),
               );
             },
           ),
@@ -100,7 +105,7 @@ class _promocionespageState extends State<PromocionesPage> {
       ),
 
       bottomNavigationBar: CustomBottomNav(
-        currentIndex: 3, // Esta es la pestaña de Bebidas Calientes
+        currentIndex: 3,
         onTap: (index) {
           switch (index) {
             case 0:

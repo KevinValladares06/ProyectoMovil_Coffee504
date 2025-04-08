@@ -1,3 +1,4 @@
+import 'package:coffee_504/screens/menuproyecto.dart';
 import 'package:flutter/material.dart';
 import 'package:coffee_504/screens/carrito.dart';
 import 'package:coffee_504/widgets/icono_carrito.dart';
@@ -79,6 +80,15 @@ class _BebidasFriasState extends State<BebidasFrias> {
       appBar: AppBar(
         title: const Text('Bebidas Frías'),
         backgroundColor: const Color.fromARGB(255, 225, 185, 159),
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(builder: (_) => menuproyecto()),
+            );
+          },
+        ),
         actions: [
           IconoCarrito(
             onPressed: () async {

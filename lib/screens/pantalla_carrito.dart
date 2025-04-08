@@ -33,6 +33,15 @@ class _PantallaCarritoState extends State<PantallaCarrito> {
       appBar: AppBar(
         title: const Text('Carrito de Compras'),
         backgroundColor: const Color.fromARGB(255, 225, 185, 159),
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(builder: (_) => menuproyecto()),
+            );
+          },
+        ),
       ),
       backgroundColor: const Color.fromARGB(255, 225, 185, 159),
       body: Padding(

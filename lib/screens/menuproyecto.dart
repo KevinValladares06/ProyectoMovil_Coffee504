@@ -1,6 +1,7 @@
 import 'dart:ui';
 import 'package:coffee_504/screens/pantalla_carrito.dart';
 import 'package:coffee_504/screens/promos.dart';
+import 'package:coffee_504/screens/signin_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:coffee_504/screens/BebidasCalientes.dart';
 import 'package:coffee_504/screens/BebidasFrias.dart';
@@ -70,10 +71,20 @@ class _menuproyectoState extends State<menuproyecto> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Menú Principal'),
         backgroundColor: const Color.fromARGB(255, 225, 185, 159),
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(builder: (context) => const SignInScreen()),
+            );
+          },
+        ),
+        title: const Text('Menú Principal'),
       ),
       backgroundColor: const Color.fromARGB(255, 225, 185, 159),
+
       body: Column(
         children: [
           _buildBanner(),
